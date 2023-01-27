@@ -61,3 +61,27 @@ function renderWeather(weatherDetails) {
     todayWeather.innerHTML = details;
   }
    
+  function weatherSearch(choiceOfCity) {
+ 
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${choiceOfCity}&limit=5&appid=` +
+    apiKey)
+      .then((response) => response.json())
+      .then((city) => {
+        let firstCity = city[0];
+        console.log(firstCity);
+        console.log(firstCity.lat);
+        console.log(firstCity.lon);
+  
+  
+        return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${firstCity.lat}&lon=${firstCity.lon}&units=metric&appid=` +
+        apiKey);
+      })
+  
+      .then((response) => response.json())
+      .then((cityData) => {
+        // the below is the data from return fetch (queryURL2)
+        console.log(cityData);
+        renderWeather(cityData);
+      });
+  }
+  
