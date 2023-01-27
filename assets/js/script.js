@@ -93,3 +93,19 @@ function renderWeather(weatherDetails) {
       weatherSearch(nameOfCity);
     }
   });
+
+  init();
+
+// check the local storage
+function init() {
+  // check if there are any stored cities
+  let storedCities = JSON.parse(localStorage.getItem("cities"));
+
+  // If cities are stored, update the cities array to it
+  if (storedCities) {
+    cities = storedCities;
+  }
+
+  // Function to render cities on the left
+  buildCities(cities);
+}
