@@ -44,4 +44,20 @@ function buildCities(city) {
     }
     
 }
+
+function renderWeather(weatherDetails) {
+    // city title
+    let nameOfCity = weatherDetails.city.name;
+    let icons = weatherDetails.list[0].weather[0].icon;
+    let iconsURL = `http://openweathermap.org/img/wn/${icons}@2x.png`;
+  
+    console.log(cityTitle);
+    let details = ` <h1>${nameOfCity} (${moment(weatherDetails.dt).format("DD/MM/YYYY")})
+    <img src='${iconsURL}'></h1>
+    <p>Temp: ${weatherDetails.list[0].main.temp} &#8451</p>
+    <p>Wind</p>
+    <p>Humidity</p>`;
+  
+    todayWeather.innerHTML = details;
+  }
    
