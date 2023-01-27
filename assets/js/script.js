@@ -85,3 +85,11 @@ function renderWeather(weatherDetails) {
       });
   }
   
+  listOfCities.addEventListener("click", function (event) {
+    if (event.target.matches("li")) {
+      console.log(event.target);
+      let nameOfCity = event.target.textContent;
+      console.log(nameOfCity);
+      weatherSearch(nameOfCity);
+    }
+  });
