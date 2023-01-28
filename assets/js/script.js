@@ -1,13 +1,13 @@
 //DOM ELEMENT
 let searchBtn = document.querySelector("#search-button");
-let searchInput = document.querySelector("search-input");
+let searchInput = document.querySelector("#search-input");
 let todayWeather = document.querySelector("#today");
 let listOfCities = document.querySelector(".list-of-city");
 
     
 let apiKey = "f4c9518fc9bfcf20e6accc10273d3d66";
 let variousCities = [];
-
+init();
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -94,7 +94,7 @@ function renderWeather(weatherDetails) {
     }
   });
 
-  init();
+
 
 // check the local storage
 function init() {
@@ -103,9 +103,9 @@ function init() {
 
   // If cities are stored, update the cities array to it
   if (storedCities) {
-    cities = storedCities;
+    variousCities = storedCities;
   }
 
   // Function to render cities on the left
-  buildCities(cities);
+  buildCities(variousCities);
 }
