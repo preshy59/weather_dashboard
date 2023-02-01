@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+*{ padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+   font-family: 'Poppins', sans-serif; 
+   background-color: #fff;
+   height: 100vh;
+}
+
+#weather-header{
+    background-color:rgba(67, 33, 255, 0.96) !important;
+    height: 15%;
+    
+}
+#container{
+    margin: 0;
+    padding: 40px;
+}
+
+#form-heading{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#search-input{
+    width: 100%;
+    height: 50px;
+}
+#groupId{
+    width: 100%;
+}
+#search-button{
+    background-color: rgba(6, 54, 224, 0.76);
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+#history{
+    width: 100%;
+}
+
+li{
+    background-color: rgba(173, 175, 181, 0.76);
+    color: #0a07078b;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    list-style-type: none;
+    
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  
+}
+
+
+
+
+#today{
+    border-radius: 2px solid grey;
+    height: 50vh;
+}
+
+#forecast{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    
+       
+}
+
+
+#list-of-forecast{
+    border: 4px solid rgba(11, 5, 50, 0.96);
+    background-color: rgba(11, 5, 50, 0.96);
+    color: white;
+    margin: 0 0px;
+    
+    
+}
+
+
