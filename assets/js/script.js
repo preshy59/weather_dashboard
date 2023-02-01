@@ -3,6 +3,7 @@ let searchBtn = document.querySelector("#search-button");
 let searchInput = document.querySelector("#search-input");
 let todayWeather = document.querySelector("#today");
 let listOfCities = document.querySelector(".list-of-city");
+let currentWeather = document.querySelector(".container");
 let weatherForecast = document.querySelector("#forecast");
 let variousForcast = document.querySelector("#list-of-forecast");
 
@@ -107,11 +108,12 @@ function displayWeather(weatherDetails) {
     let temp = weatherDetails.list[0].main.temp
 
     console.log(nameOfCity);
-    todayWeather.innerHTML = ` <h1>${nameOfCity} (${moment(weatherDetails.dt).format("DD/MM/YYYY")})
+    currentWeather.innerHTML = ` <h1>${nameOfCity} (${moment(weatherDetails.dt).format("DD/MM/YYYY")})
             <img src='${iconsURL}'></h1>
             <p>Temp: ${temp} &#8451</p>
             <p>Wind: ${windSpeed} KPH</p>
             <p>Humidity ${humidity} &#37</p>`;
+            todayWeather.append(currentWeather);
 
 
 }
