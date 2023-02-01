@@ -118,25 +118,25 @@ function displayWeather(weatherDetails) {
 
 }
 
-// function diplayForecast(weatherDetails) {
+function diplayForecast(weatherDetails) {
   
-//     weatherDetails.forEach((day, index) => {
+    forEach((day, index) => {
         
-//         if (index > 0) {
-//             let fiveforcast = document.createElement("div");
-//             fiveforcast.className = 'card-body';
-//             fiveforcast = `<h5 class="card-title">${moment(day.dt * 1000).format("DD/MM/YYYY")}</h5>
-//             <h6 class="card-subtitle mb-2 text-muted">${`http://openweathermap.org/img/wn/${weatherDetails.list[0].weather[0].icon}@2x.png`}</h6>
-//             <p class="card-text">Temp: ${weatherDetails.list[0].main.temp} &#8451</p>
-//             <p class="card-text">Wind: ${weatherDetails.list[0].wind.speed} KPH</p>
-//             <p class="card-text">Humidity ${weatherDetails.list[0].main.humidity} &#37</p>`
+        if (index > 0) {
+            let fiveforcast = document.createElement("div");
+            fiveforcast.className = 'card-body';
+            fiveforcast = `<h5 class="card-title">${moment(day.dt * 1000).format("DD/MM/YYYY")}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${`http://openweathermap.org/img/wn/${weatherDetails.list[0].weather[0].icon}@2x.png`}</h6>
+            <p class="card-text">Temp: ${weatherDetails.list[0].main.temp} &#8451</p>
+            <p class="card-text">Wind: ${weatherDetails.list[0].wind.speed} KPH</p>
+            <p class="card-text">Humidity ${weatherDetails.list[0].main.humidity} &#37</p>`
 
-//             variousForcast.insertAdjacentElement('beforeend', fiveforcast);
-//         }
-//     });
-//     weatherForecast.innerHTML = variousForcast;
+            variousForcast.insertAdjacentElement('beforeend', fiveforcast);
+        }
+    });
+    weatherForecast.innerHTML = variousForcast;
     
-// }
+}
 
 
 
