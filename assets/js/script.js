@@ -5,7 +5,7 @@ let todayWeather = document.querySelector("#today");
 let listOfCities = document.querySelector(".list-of-city");
 let currentWeather = document.querySelector(".container");
 let weatherForecast = document.querySelector("#forecast");
-let variousForcast = document.querySelector("#list-of-forecast");
+let forcast = document.querySelector("#variousForecast")
 
 let apiKey = "f4c9518fc9bfcf20e6accc10273d3d66";
 let variousCities = [];
@@ -92,8 +92,7 @@ function exploreWeatherSearch(choiceOfCity) {
         .then((cityData) => {
             console.log(cityData);
             displayWeather(cityData);
-            diplayForecast(cityData);
-            
+
         });
 }
 
@@ -113,29 +112,29 @@ function displayWeather(weatherDetails) {
             <p>Temp: ${temp} &#8451</p>
             <p>Wind: ${windSpeed} KPH</p>
             <p>Humidity ${humidity} &#37</p>`;
-            todayWeather.append(currentWeather);
+    todayWeather.append(currentWeather);
 
 
-}
+    weatherDetails.forEach((day, index) => {
 
-function diplayForecast(weatherDetails) {
-  
-    forEach((day, index) => {
-        
         if (index > 0) {
-            let fiveforcast = document.createElement("div");
-            fiveforcast.className = 'card-body';
-            fiveforcast = `<h5 class="card-title">${moment(day.dt * 1000).format("DD/MM/YYYY")}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${`http://openweathermap.org/img/wn/${weatherDetails.list[0].weather[0].icon}@2x.png`}</h6>
-            <p class="card-text">Temp: ${weatherDetails.list[0].main.temp} &#8451</p>
-            <p class="card-text">Wind: ${weatherDetails.list[0].wind.speed} KPH</p>
-            <p class="card-text">Humidity ${weatherDetails.list[0].main.humidity} &#37</p>`
+            
+            forcast.innerHTML = `<div class="card" style="width: 18rem;" id="list-of-forecast">
+            <div class="card-body">
+            <h5 class="card-title">${moment(day.dt * 1000).format("DD/MM/YYYY")}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${`http://openweathermap.org/img/wn/${icons}@2x.png`}</h6>
+            <p class="card-text">Temp: ${temp} &#8451</p>
+            <p class="card-text">Wind: ${windSpeed} KPH</p>
+            <p class="card-text">Humidity ${humidity} &#37</p>
+            </div>
+            </div>`
 
-            variousForcast.insertAdjacentElement('beforeend', fiveforcast);
+            
         }
+        weatherForecast.append(forcast);
     });
-    weatherForecast.innerHTML = variousForcast;
-    
+   
+
 }
 
 
