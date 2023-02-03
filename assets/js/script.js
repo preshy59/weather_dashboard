@@ -5,7 +5,7 @@ let todayWeather = document.querySelector("#today");
 let listOfCities = document.querySelector(".list-of-city");
 let currentWeather = document.querySelector(".container");
 let weatherForecast = document.querySelector("#forecast");
-let forcast = document.querySelector("#variousForecast")
+let forcast = document.querySelector(".variousForecast")
 
 let apiKey = "f4c9518fc9bfcf20e6accc10273d3d66";
 let variousCities = [];
@@ -114,15 +114,16 @@ function displayWeather(weatherDetails) {
             <p>Humidity ${humidity} &#37</p>`;
     todayWeather.append(currentWeather);
 
+        forcast.innerHTML = "";
+    weatherDetails.list.forEach((day, index) => {
 
-    weatherDetails.forEach((day, index) => {
+        if (index % 8 == 0 ) {
 
-        if (index > 0) {
             
-            forcast.innerHTML = `<div class="card" style="width: 18rem;" id="list-of-forecast">
+            forcast.innerHTML += `<div class="card" style="width: 18rem;" id="list-of-forecast">
             <div class="card-body">
             <h5 class="card-title">${moment(day.dt * 1000).format("DD/MM/YYYY")}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${`http://openweathermap.org/img/wn/${icons}@2x.png`}</h6>
+            <h6 class="card-subtitle mb-2 text-muted"> <img src = "${`http://openweathermap.org/img/wn/${icons}@2x.png`}"></h6>
             <p class="card-text">Temp: ${temp} &#8451</p>
             <p class="card-text">Wind: ${windSpeed} KPH</p>
             <p class="card-text">Humidity ${humidity} &#37</p>
