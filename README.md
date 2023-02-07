@@ -28,7 +28,10 @@ To get a local copy up and running follow these simple example steps.
 ## Usage
 Type in the city of you choose to in the input type na click on serach or enter button to view the waether condition of your choice of city. you can also, as you search through, the cities are listed below which are clickable to obtain the weather information.
 
+<!-- screenshoot -->
+#preview of the site
 
+![Screenshot of the website](./assets/images/weather_forcast.png)
 
 <!-- CONTRIBUTING -->
 ## Contributing
