@@ -100,9 +100,9 @@ li{
     border: 4px solid rgba(11, 5, 50, 0.96);
     background-color: rgba(11, 5, 50, 0.96);
     color: white;
-    width:15% !important;
+    width:auto !important;
     margin: 10px;
-    height: 25vh;
+    height: auto;
 }
 
 .list-of-city{
